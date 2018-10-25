@@ -1,0 +1,36 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/#/pages/dashboard">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Mis cambios</li>
+    </ol>
+</nav>
+<nb-card>
+    <nb-card-header>
+        Mis Cambios
+    </nb-card-header>
+
+    <nb-card-body>
+        <div class="row">
+            <div class="form-group col-4">
+                <select class="form-control" id="inputGroupSelect01">
+                    <option selected>Carrier Agregation</option>
+                    <option value="1">Cambios 2</option>
+                    <option value="2">Cambios 3</option>
+                    <option value="3">Cambios 4</option>
+                    <option value="4">Cambios 5</option>
+                </select>
+            </div>
+        </div>
+        <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+    <nb-card-footer class="text-center">
+        <button [nbPopover]="templateRef" class="btn btn-primary mr-3">
+            <i class="far fa-save"></i>
+            Guardar y Descargar
+        </button>
+        <ng-template #templateRef>
+            <span>Sus cambios se han guardado, en breve iniciará la descarga.</span>
+        </ng-template>
+    </nb-card-footer>
+</nb-card>

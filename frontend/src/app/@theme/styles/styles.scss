@@ -1,0 +1,95 @@
+// themes - our custom or/and out of the box themes
+@import 'themes';
+
+// framework component themes (styles tied to theme variables)
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/auth/styles/all';
+@import '~@nebular/bootstrap/styles/globals';
+// ...
+
+// global app font size
+@import './font-size';
+
+// loading progress bar theme
+@import './pace.theme';
+
+@import './bootstrap-rtl';
+
+// install the framework and custom global styles
+@include nb-install() {
+
+  // framework global styles
+  @include nb-theme-global();
+  @include nb-auth-global();
+  @include nb-bootstrap-global();
+
+  // loading progress bar
+  @include ngx-pace-theme();
+
+  // fixed in rc.9 and can be removed after upgrade
+  .custom-control .custom-control-indicator {
+    border-radius: 50%; // TODO: quickfix for https://github.com/akveo/nebular/issues/275
+  }
+  @include bootstrap-rtl();
+};
+
+a:hover{
+  text-decoration: none;
+}
+
+.nb-theme-corporate .btn.btn-primary, .nb-theme-corporate .btn.btn-success, .nb-theme-corporate .btn.btn-success:hover {
+  border: 1px solid;
+}
+
+.nb-theme-corporate .btn.btn-primary:hover {
+  color: #FF3d00;
+}
+
+.nb-theme-corporate .btn.btn-success:hover {
+  color: #005cff;
+}
+
+.nb-theme-corporate .btn.btn-primary:hover, .nb-theme-corporate .btn.btn-primary, .nb-theme-corporate nb-context-menu {
+  border-color: #FF3d00;
+}
+
+.nb-theme-corporate nb-context-menu .arrow{
+  border-bottom-color: #FF3d00;
+}
+
+.nb-theme-corporate .btn.btn-success:hover{
+  border-color:  #005cff;
+}
+
+.nb-theme-corporate .btn.btn-primary, .nb-theme-corporate nb-menu.context-menu .menu-items .menu-item a:focus, 
+.nb-theme-corporate nb-menu.context-menu .menu-items .menu-item a:active, 
+.nb-theme-corporate nb-menu.context-menu .menu-items .menu-item a:hover, .nb-theme-corporate .btn.btn-primary:active, 
+.nb-theme-corporate .btn.btn-primary.active, .nb-theme-corporate .btn.btn-primary:active:focus, .nb-theme-corporate .btn.btn-primary:focus, 
+.nb-theme-corporate .btn.btn-primary.focus{
+  background-color: #FF3d00;
+}
+
+.nb-theme-corporate nb-layout .layout nb-layout-header nav, .nb-theme-corporate .btn.btn-succes, 
+.nb-theme-corporate ng2-smart-table th.ng2-smart-actions-title-add a, .nb-theme-corporate .btn.btn-success {
+  background-color:#005CFF;
+}
+
+.nb-theme-corporate .btn.btn-success:hover, .nb-theme-corporate .btn.btn-primary:hover {
+  background-color: #FFF;
+}
+
+.nb-theme-corporate .input-group-addon:disabled, .nb-theme-corporate .form-control:disabled {
+  background: #e3e9ee;
+}
+
+.nb-theme-corporate nb-sidebar.menu-sidebar nb-menu > .menu-items > .menu-item:first-child .menu-title::after{
+  content: none!important;
+}
+
+.font2rem{
+  font-size: 2rem;
+}
+
+.font2rem .text-muted:hover {
+  color:#5dcfe3 !important;
+}

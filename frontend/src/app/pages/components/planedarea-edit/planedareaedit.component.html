@@ -1,0 +1,74 @@
+<nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/#/pages/dashboard">Home</a></li>
+          <li class="breadcrumb-item"><a href="/#/pages/areas">Áreas Planificadas</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Editar Área Planificada</li>
+        </ol>
+      </nav>
+      <nb-card>
+        <nb-card-header>
+          Editar Área Planificada: Maipau 2G
+        </nb-card-header>
+        <nb-card-body>
+          <toaster-container [toasterconfig]="config"></toaster-container>
+      
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label class="form-control-label">Nombre de Área Planificada</label>
+                <input class="form-control" value="Maipau 2G">
+              </div>
+              <div class="form-group">
+                <div class="checkboxes mb-3">
+                  <nb-checkbox disabled>2G</nb-checkbox>
+                  <nb-checkbox checked>3G</nb-checkbox>
+                  <nb-checkbox>4G</nb-checkbox>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-control-label">Elemento de RED:</label>
+                <select class="form-control" id="inputGroupSelect01">
+                  <option selected>Sitio</option>
+                  <option value="1">Celda</option>
+                  <option value="2">RNC</option>
+                  <option value="3">Región</option>
+                  <option value="4">Cluster</option>
+                </select>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-9">
+                  <div class="form-group">
+                    <select class="custom-select" size="6" multiple>
+                      <option selected>MAN200</option>
+                      <option selected>MAI278</option>
+                      <option selected>MAN200</option>
+                      <option value="3">MAI278</option>
+                      <option value="4">MAN200</option>
+                      <option value="5">MAI278</option>
+                      <option value="6">MAN200</option>
+                      <option value="7">MAI278</option>
+                      <option value="8">MAN200</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-primary">
+                    Agregar <i class="fas fa-angle-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label class="form-control-label">Lista de Elementos:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="14">MAN200, MAI278, MAN200, MAI278</textarea>
+              </div>
+            </div>
+          </div>
+        </nb-card-body>
+      
+        <nb-card-footer>
+          <button class="btn btn-success mb-3 mr-2"><i class="fas fa-upload"></i> Importar file</button>
+          <a class="btn btn-primary mb-3" href="/#/pages/"><i class="far fa-save"></i> Guardar Área</a>
+        </nb-card-footer>
+      </nb-card>

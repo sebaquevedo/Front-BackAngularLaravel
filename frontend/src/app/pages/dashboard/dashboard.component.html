@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-xxl-5">
+    <nb-card>
+      <nb-card-header>Área Planificada</nb-card-header>
+      <nb-card-body>
+        <div class="input-group mb-3">
+          <select class="form-control" id="inputGroupSelect01">
+            <option selected>Todas</option>
+            <option value="1">Maipau 2G</option>
+            <option value="2">Maipau 3G</option>
+            <option value="3">Maipau 4G</option>
+            <option value="4">Santiago Centro 2G</option>
+            <option value="5">Santiago Centro 3G</option>
+            <option value="6">Santiago Centro 4G</option>
+            <option value="7">Renca 2G</option>
+            <option value="8">Renca 3G</option>
+          </select>
+        </div>
+        <div class="date">
+          <div class="input-group mb-3">
+            <input [nbDatepicker]="datepicker" class="form-control" placeholder="Oct 11, 2018">
+            <nb-datepicker #datepicker></nb-datepicker>
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2">
+                <i class="menu-icon nb-grid-a ng-star-inserted"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="checkboxes mb-3">
+          <nb-checkbox>2G</nb-checkbox>
+          <nb-checkbox>3G</nb-checkbox>
+          <nb-checkbox>4G</nb-checkbox>
+        </div>
+        <div class="input-group mb-3">
+          <select class="form-control" id="inputGroupSelect04" aria-label="Example select with button addon">
+            <option selected>Mo</option>
+            <option value="1">Parámetro</option>
+          </select>
+          <input type="text" aria-label="Buscar..." placeholder="Buscar..." class="form-control">
+          <div class="input-group-append">
+            <button class="btn btn-primary input-group-text" type="submit">Ejecutar</button>
+          </div>
+        </div>
+
+      </nb-card-body>
+    </nb-card>
+    <div class="treeview">
+      <nb-card>
+        <nb-card-header>Filtrado de Datos</nb-card-header>
+        <nb-card-body>
+          <tree-root [nodes]="nodes"></tree-root>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+  <div class="col-xxl-7">
+    <ngx-ecommerce-visitors-analytics></ngx-ecommerce-visitors-analytics>
+  </div>
+  <div class="col-xxl-12" id="results">
+    <nb-card>
+      <nb-card-header>
+        Resultado de Filtrado
+      </nb-card-header>
+      <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
+      </nb-card-body>
+      <nb-card-footer class="text-center">
+        <button [nbPopover]="templateRef" class="btn btn-success mr-3"><i class="far fa-clock"></i> Guardar Edición
+          Temporal</button>
+        <ng-template #templateRef>
+          <span>Sus cambios se han guardado temporalmente.</span>
+        </ng-template>
+        <a class="btn btn-primary" href="/#/pages/miscambios"><i class="far fa-save"></i> Guardar Cambios Finales</a>
+      </nb-card-footer>
+    </nb-card>
+  </div>
+</div>
